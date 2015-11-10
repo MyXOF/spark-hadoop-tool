@@ -1,0 +1,285 @@
+DEBUG [2015-11-10 19:21:56,057] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[Rate of successful kerberos logins and latency (milliseconds)], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:21:56,073] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[Rate of failed kerberos logins and latency (milliseconds)], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:21:56,073] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[GetGroups], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:21:56,075] org.apache.hadoop.metrics2.impl.MetricsSystemImpl:231 - UgiMetrics, User and group related metrics 
+DEBUG [2015-11-10 19:21:56,699] org.apache.hadoop.security.authentication.util.KerberosName:88 - Kerberos krb5 configuration not found, setting default realm to empty 
+DEBUG [2015-11-10 19:21:56,706] org.apache.hadoop.security.Groups:291 -  Creating new Groups object 
+DEBUG [2015-11-10 19:21:56,710] org.apache.hadoop.util.NativeCodeLoader:46 - Trying to load the custom-built native-hadoop library... 
+DEBUG [2015-11-10 19:21:56,711] org.apache.hadoop.util.NativeCodeLoader:55 - Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path 
+DEBUG [2015-11-10 19:21:56,712] org.apache.hadoop.util.NativeCodeLoader:56 - java.library.path=/Users/xuyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. 
+DEBUG [2015-11-10 19:21:56,713] org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback:41 - Falling back to shell based 
+DEBUG [2015-11-10 19:21:56,714] org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback:45 - Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping 
+DEBUG [2015-11-10 19:21:56,962] org.apache.hadoop.util.Shell:320 - Failed to detect a valid hadoop home directory 
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:302) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:327) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:79) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:116) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:93) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:73) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:293) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:283) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:260) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:789) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:774) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:647) [hadoop-common-2.6.1.jar:na]
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library-2.10.4.jar:na]
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:311) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:61) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at example.SparkTest.main(SparkTest.java:17) [classes/:na]
+DEBUG [2015-11-10 19:21:56,978] org.apache.hadoop.util.Shell:392 - setsid is not available on this machine. So not using it. 
+DEBUG [2015-11-10 19:21:56,979] org.apache.hadoop.util.Shell:396 - setsid exited with exit code 0 
+DEBUG [2015-11-10 19:21:57,030] org.apache.hadoop.security.Groups:103 - Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000 
+DEBUG [2015-11-10 19:21:57,037] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:221 - hadoop login 
+DEBUG [2015-11-10 19:21:57,038] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:156 - hadoop login commit 
+DEBUG [2015-11-10 19:21:57,044] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:186 - using local user:UnixPrincipal: xuyi 
+DEBUG [2015-11-10 19:21:57,045] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:192 - Using user: "UnixPrincipal: xuyi" with name xuyi 
+DEBUG [2015-11-10 19:21:57,045] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:202 - User entry: "xuyi" 
+DEBUG [2015-11-10 19:21:57,047] org.apache.hadoop.security.UserGroupInformation:825 - UGI loginUser:xuyi (auth:SIMPLE) 
+DEBUG [2015-11-10 19:21:57,104] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:21:57,479] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:21:57,484] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:21:57,490] org.apache.spark.Logging$class:63 - SSLConfiguration for file server: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()} 
+DEBUG [2015-11-10 19:21:57,491] org.apache.spark.Logging$class:63 - SSLConfiguration for Akka: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()} 
+DEBUG [2015-11-10 19:21:57,562] org.apache.spark.Logging$class:63 - In createActorSystem, requireCookie is: off 
+DEBUG [2015-11-10 19:21:58,433] org.apache.spark.Logging$class:63 - Using serializer: class org.apache.spark.serializer.JavaSerializer 
+DEBUG [2015-11-10 19:21:58,693] org.spark-project.jetty.util.log.Log:162 - Logging to Logger[org.spark-project.jetty.util.log] via org.spark-project.jetty.util.log.Slf4jLog 
+DEBUG [2015-11-10 19:21:58,707] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@318161d6 + SocketConnector@0.0.0.0:0 as connector 
+DEBUG [2015-11-10 19:21:58,711] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@318161d6 + qtp698007442{8<=0<=0/254,-1} as threadpool 
+DEBUG [2015-11-10 19:21:58,771] org.apache.spark.Logging$class:63 - HttpServer is not using security 
+DEBUG [2015-11-10 19:21:58,772] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.handler.HandlerList@77365c67 + org.spark-project.jetty.server.handler.ResourceHandler@11ecab56 as handler 
+DEBUG [2015-11-10 19:21:58,772] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.handler.HandlerList@77365c67 + org.spark-project.jetty.server.handler.DefaultHandler@48e4a44b as handler 
+DEBUG [2015-11-10 19:21:58,772] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@318161d6 + org.spark-project.jetty.server.handler.HandlerList@77365c67 as handler 
+DEBUG [2015-11-10 19:21:58,773] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.Server@318161d6 
+DEBUG [2015-11-10 19:21:58,789] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.HandlerList@77365c67 
+DEBUG [2015-11-10 19:21:58,789] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.ResourceHandler@11ecab56 
+DEBUG [2015-11-10 19:21:58,796] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.ResourceHandler@11ecab56 
+DEBUG [2015-11-10 19:21:58,797] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.ResourceHandler@11ecab56 
+DEBUG [2015-11-10 19:21:58,798] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.DefaultHandler@48e4a44b 
+DEBUG [2015-11-10 19:21:58,798] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.DefaultHandler@48e4a44b 
+DEBUG [2015-11-10 19:21:58,799] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.DefaultHandler@48e4a44b 
+DEBUG [2015-11-10 19:21:58,799] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.HandlerList@77365c67 
+DEBUG [2015-11-10 19:21:58,799] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.HandlerList@77365c67 
+DEBUG [2015-11-10 19:21:58,799] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.Server@318161d6 
+DEBUG [2015-11-10 19:21:58,800] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting qtp698007442{8<=0<=0/254,-1} 
+DEBUG [2015-11-10 19:21:58,803] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED qtp698007442{8<=7<=8/254,0} 
+DEBUG [2015-11-10 19:21:58,804] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting SocketConnector@0.0.0.0:0 
+DEBUG [2015-11-10 19:21:58,806] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting null/null 
+DEBUG [2015-11-10 19:21:58,811] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-] 
+DEBUG [2015-11-10 19:21:58,814] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED SocketConnector@0.0.0.0:62654 
+DEBUG [2015-11-10 19:21:58,814] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.Server@318161d6 
+DEBUG [2015-11-10 19:21:58,819] org.apache.spark.Logging$class:63 - HTTP file server started at: http://101.5.130.8:62654 
+DEBUG [2015-11-10 19:21:59,029] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.Server@318161d6 
+DEBUG [2015-11-10 19:21:59,029] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping SocketConnector@0.0.0.0:62654 
+DEBUG [2015-11-10 19:21:59,031] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-] 
+DEBUG [2015-11-10 19:21:59,032] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED null/null 
+DEBUG [2015-11-10 19:21:59,034] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED SocketConnector@0.0.0.0:0 
+DEBUG [2015-11-10 19:21:59,034] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.HandlerList@77365c67 
+DEBUG [2015-11-10 19:21:59,035] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.HandlerList@77365c67 
+DEBUG [2015-11-10 19:21:59,035] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.DefaultHandler@48e4a44b 
+DEBUG [2015-11-10 19:21:59,035] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.DefaultHandler@48e4a44b 
+DEBUG [2015-11-10 19:21:59,036] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.DefaultHandler@48e4a44b 
+DEBUG [2015-11-10 19:21:59,036] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.ResourceHandler@11ecab56 
+DEBUG [2015-11-10 19:21:59,036] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.ResourceHandler@11ecab56 
+DEBUG [2015-11-10 19:21:59,036] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.ResourceHandler@11ecab56 
+DEBUG [2015-11-10 19:21:59,037] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.HandlerList@77365c67 
+DEBUG [2015-11-10 19:21:59,037] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.Server@318161d6 
+DEBUG [2015-11-10 19:21:59,037] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping qtp698007442{8<=7<=7/254,0} 
+DEBUG [2015-11-10 19:21:59,091] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED qtp698007442{8<=0<=0/254,3} 
+DEBUG [2015-11-10 19:21:59,091] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.Server@318161d6 
+DEBUG [2015-11-10 19:21:59,104] org.apache.spark.util.ActorLogReceive$$anon$1:56 - [actor] received message AkkaMessage(StopMapOutputTracker,true) from Actor[akka://sparkDriver/temp/$a] 
+DEBUG [2015-11-10 19:21:59,106] org.apache.spark.Logging$class:63 - Received RPC message: AkkaMessage(StopMapOutputTracker,true) 
+DEBUG [2015-11-10 19:21:59,119] org.apache.spark.util.ActorLogReceive$$anon$1:62 - [actor] handled message (13.736 ms) AkkaMessage(StopMapOutputTracker,true) from Actor[akka://sparkDriver/temp/$a] 
+DEBUG [2015-11-10 19:24:48,444] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[Rate of successful kerberos logins and latency (milliseconds)], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:24:48,460] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[Rate of failed kerberos logins and latency (milliseconds)], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:24:48,461] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[GetGroups], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:24:48,463] org.apache.hadoop.metrics2.impl.MetricsSystemImpl:231 - UgiMetrics, User and group related metrics 
+DEBUG [2015-11-10 19:24:49,079] org.apache.hadoop.security.authentication.util.KerberosName:88 - Kerberos krb5 configuration not found, setting default realm to empty 
+DEBUG [2015-11-10 19:24:49,084] org.apache.hadoop.security.Groups:291 -  Creating new Groups object 
+DEBUG [2015-11-10 19:24:49,087] org.apache.hadoop.util.NativeCodeLoader:46 - Trying to load the custom-built native-hadoop library... 
+DEBUG [2015-11-10 19:24:49,089] org.apache.hadoop.util.NativeCodeLoader:55 - Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path 
+DEBUG [2015-11-10 19:24:49,089] org.apache.hadoop.util.NativeCodeLoader:56 - java.library.path=/Users/xuyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. 
+DEBUG [2015-11-10 19:24:49,093] org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback:41 - Falling back to shell based 
+DEBUG [2015-11-10 19:24:49,095] org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback:45 - Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping 
+DEBUG [2015-11-10 19:24:49,342] org.apache.hadoop.util.Shell:320 - Failed to detect a valid hadoop home directory 
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:302) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:327) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:79) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:116) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:93) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:73) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:293) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:283) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:260) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:789) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:774) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:647) [hadoop-common-2.6.1.jar:na]
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library-2.10.4.jar:na]
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:311) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:61) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at example.SparkTest.main(SparkTest.java:17) [classes/:na]
+DEBUG [2015-11-10 19:24:49,358] org.apache.hadoop.util.Shell:392 - setsid is not available on this machine. So not using it. 
+DEBUG [2015-11-10 19:24:49,359] org.apache.hadoop.util.Shell:396 - setsid exited with exit code 0 
+DEBUG [2015-11-10 19:24:49,409] org.apache.hadoop.security.Groups:103 - Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000 
+DEBUG [2015-11-10 19:24:49,419] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:221 - hadoop login 
+DEBUG [2015-11-10 19:24:49,420] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:156 - hadoop login commit 
+DEBUG [2015-11-10 19:24:49,425] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:186 - using local user:UnixPrincipal: xuyi 
+DEBUG [2015-11-10 19:24:49,426] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:192 - Using user: "UnixPrincipal: xuyi" with name xuyi 
+DEBUG [2015-11-10 19:24:49,426] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:202 - User entry: "xuyi" 
+DEBUG [2015-11-10 19:24:49,427] org.apache.hadoop.security.UserGroupInformation:825 - UGI loginUser:xuyi (auth:SIMPLE) 
+DEBUG [2015-11-10 19:24:49,497] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:24:49,896] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:24:49,900] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:24:49,905] org.apache.spark.Logging$class:63 - SSLConfiguration for file server: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()} 
+DEBUG [2015-11-10 19:24:49,906] org.apache.spark.Logging$class:63 - SSLConfiguration for Akka: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()} 
+DEBUG [2015-11-10 19:24:49,975] org.apache.spark.Logging$class:63 - In createActorSystem, requireCookie is: off 
+DEBUG [2015-11-10 19:24:50,827] org.apache.spark.Logging$class:63 - Using serializer: class org.apache.spark.serializer.JavaSerializer 
+DEBUG [2015-11-10 19:24:51,078] org.spark-project.jetty.util.log.Log:162 - Logging to Logger[org.spark-project.jetty.util.log] via org.spark-project.jetty.util.log.Slf4jLog 
+DEBUG [2015-11-10 19:24:51,087] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@48a304cc + SocketConnector@0.0.0.0:0 as connector 
+DEBUG [2015-11-10 19:24:51,091] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@48a304cc + qtp914953516{8<=0<=0/254,-1} as threadpool 
+DEBUG [2015-11-10 19:24:51,141] org.apache.spark.Logging$class:63 - HttpServer is not using security 
+DEBUG [2015-11-10 19:24:51,142] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.handler.HandlerList@70d99279 + org.spark-project.jetty.server.handler.ResourceHandler@5c1f7fd0 as handler 
+DEBUG [2015-11-10 19:24:51,142] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.handler.HandlerList@70d99279 + org.spark-project.jetty.server.handler.DefaultHandler@18005ff0 as handler 
+DEBUG [2015-11-10 19:24:51,142] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@48a304cc + org.spark-project.jetty.server.handler.HandlerList@70d99279 as handler 
+DEBUG [2015-11-10 19:24:51,142] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.Server@48a304cc 
+DEBUG [2015-11-10 19:24:51,155] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.HandlerList@70d99279 
+DEBUG [2015-11-10 19:24:51,156] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.ResourceHandler@5c1f7fd0 
+DEBUG [2015-11-10 19:24:51,163] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.ResourceHandler@5c1f7fd0 
+DEBUG [2015-11-10 19:24:51,164] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.ResourceHandler@5c1f7fd0 
+DEBUG [2015-11-10 19:24:51,164] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.DefaultHandler@18005ff0 
+DEBUG [2015-11-10 19:24:51,164] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.DefaultHandler@18005ff0 
+DEBUG [2015-11-10 19:24:51,165] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.DefaultHandler@18005ff0 
+DEBUG [2015-11-10 19:24:51,165] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.HandlerList@70d99279 
+DEBUG [2015-11-10 19:24:51,165] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.HandlerList@70d99279 
+DEBUG [2015-11-10 19:24:51,166] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.Server@48a304cc 
+DEBUG [2015-11-10 19:24:51,166] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting qtp914953516{8<=0<=0/254,-1} 
+DEBUG [2015-11-10 19:24:51,169] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED qtp914953516{8<=7<=8/254,0} 
+DEBUG [2015-11-10 19:24:51,170] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting SocketConnector@0.0.0.0:0 
+DEBUG [2015-11-10 19:24:51,173] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting null/null 
+DEBUG [2015-11-10 19:24:51,177] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-] 
+DEBUG [2015-11-10 19:24:51,180] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED SocketConnector@0.0.0.0:62749 
+DEBUG [2015-11-10 19:24:51,181] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.Server@48a304cc 
+DEBUG [2015-11-10 19:24:51,184] org.apache.spark.Logging$class:63 - HTTP file server started at: http://101.5.130.8:62749 
+DEBUG [2015-11-10 19:24:51,398] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.Server@48a304cc 
+DEBUG [2015-11-10 19:24:51,398] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping SocketConnector@0.0.0.0:62749 
+DEBUG [2015-11-10 19:24:51,401] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-] 
+DEBUG [2015-11-10 19:24:51,401] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED null/null 
+DEBUG [2015-11-10 19:24:51,402] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED SocketConnector@0.0.0.0:0 
+DEBUG [2015-11-10 19:24:51,402] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.HandlerList@70d99279 
+DEBUG [2015-11-10 19:24:51,403] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.HandlerList@70d99279 
+DEBUG [2015-11-10 19:24:51,403] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.DefaultHandler@18005ff0 
+DEBUG [2015-11-10 19:24:51,403] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.DefaultHandler@18005ff0 
+DEBUG [2015-11-10 19:24:51,404] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.DefaultHandler@18005ff0 
+DEBUG [2015-11-10 19:24:51,404] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.ResourceHandler@5c1f7fd0 
+DEBUG [2015-11-10 19:24:51,405] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.ResourceHandler@5c1f7fd0 
+DEBUG [2015-11-10 19:24:51,405] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.ResourceHandler@5c1f7fd0 
+DEBUG [2015-11-10 19:24:51,405] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.HandlerList@70d99279 
+DEBUG [2015-11-10 19:24:51,406] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.Server@48a304cc 
+DEBUG [2015-11-10 19:24:51,406] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping qtp914953516{8<=8<=8/254,0} 
+DEBUG [2015-11-10 19:24:51,458] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED qtp914953516{8<=0<=0/254,5} 
+DEBUG [2015-11-10 19:24:51,459] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.Server@48a304cc 
+DEBUG [2015-11-10 19:24:51,470] org.apache.spark.util.ActorLogReceive$$anon$1:56 - [actor] received message AkkaMessage(StopMapOutputTracker,true) from Actor[akka://sparkDriver/temp/$a] 
+DEBUG [2015-11-10 19:24:51,471] org.apache.spark.Logging$class:63 - Received RPC message: AkkaMessage(StopMapOutputTracker,true) 
+DEBUG [2015-11-10 19:24:51,484] org.apache.spark.util.ActorLogReceive$$anon$1:62 - [actor] handled message (13.205 ms) AkkaMessage(StopMapOutputTracker,true) from Actor[akka://sparkDriver/temp/$a] 
+DEBUG [2015-11-10 19:33:56,246] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[Rate of successful kerberos logins and latency (milliseconds)], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:33:56,260] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[Rate of failed kerberos logins and latency (milliseconds)], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:33:56,261] org.apache.hadoop.metrics2.lib.MutableMetricsFactory:42 - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, about=, value=[GetGroups], always=false, type=DEFAULT, sampleName=Ops) 
+DEBUG [2015-11-10 19:33:56,262] org.apache.hadoop.metrics2.impl.MetricsSystemImpl:231 - UgiMetrics, User and group related metrics 
+DEBUG [2015-11-10 19:33:56,891] org.apache.hadoop.security.authentication.util.KerberosName:88 - Kerberos krb5 configuration not found, setting default realm to empty 
+DEBUG [2015-11-10 19:33:56,896] org.apache.hadoop.security.Groups:291 -  Creating new Groups object 
+DEBUG [2015-11-10 19:33:56,899] org.apache.hadoop.util.NativeCodeLoader:46 - Trying to load the custom-built native-hadoop library... 
+DEBUG [2015-11-10 19:33:56,900] org.apache.hadoop.util.NativeCodeLoader:55 - Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path 
+DEBUG [2015-11-10 19:33:56,900] org.apache.hadoop.util.NativeCodeLoader:56 - java.library.path=/Users/xuyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. 
+DEBUG [2015-11-10 19:33:56,903] org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback:41 - Falling back to shell based 
+DEBUG [2015-11-10 19:33:56,904] org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback:45 - Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping 
+DEBUG [2015-11-10 19:33:57,164] org.apache.hadoop.util.Shell:320 - Failed to detect a valid hadoop home directory 
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:302) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:327) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:79) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:116) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:93) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:73) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:293) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:283) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:260) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:789) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:774) [hadoop-common-2.6.1.jar:na]
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:647) [hadoop-common-2.6.1.jar:na]
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at scala.Option.getOrElse(Option.scala:120) [scala-library-2.10.4.jar:na]
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2084) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:311) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:61) [spark-core_2.10-1.5.1.jar:1.5.1]
+	at example.SparkTest.main(SparkTest.java:17) [classes/:na]
+DEBUG [2015-11-10 19:33:57,181] org.apache.hadoop.util.Shell:392 - setsid is not available on this machine. So not using it. 
+DEBUG [2015-11-10 19:33:57,181] org.apache.hadoop.util.Shell:396 - setsid exited with exit code 0 
+DEBUG [2015-11-10 19:33:57,234] org.apache.hadoop.security.Groups:103 - Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000 
+DEBUG [2015-11-10 19:33:57,242] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:221 - hadoop login 
+DEBUG [2015-11-10 19:33:57,243] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:156 - hadoop login commit 
+DEBUG [2015-11-10 19:33:57,247] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:186 - using local user:UnixPrincipal: xuyi 
+DEBUG [2015-11-10 19:33:57,248] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:192 - Using user: "UnixPrincipal: xuyi" with name xuyi 
+DEBUG [2015-11-10 19:33:57,248] org.apache.hadoop.security.UserGroupInformation$HadoopLoginModule:202 - User entry: "xuyi" 
+DEBUG [2015-11-10 19:33:57,249] org.apache.hadoop.security.UserGroupInformation:825 - UGI loginUser:xuyi (auth:SIMPLE) 
+DEBUG [2015-11-10 19:33:57,307] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:33:57,700] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:33:57,705] org.apache.spark.Logging$class:63 - No SSL protocol specified 
+DEBUG [2015-11-10 19:33:57,711] org.apache.spark.Logging$class:63 - SSLConfiguration for file server: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()} 
+DEBUG [2015-11-10 19:33:57,712] org.apache.spark.Logging$class:63 - SSLConfiguration for Akka: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()} 
+DEBUG [2015-11-10 19:33:57,790] org.apache.spark.Logging$class:63 - In createActorSystem, requireCookie is: off 
+DEBUG [2015-11-10 19:33:58,656] org.apache.spark.Logging$class:63 - Using serializer: class org.apache.spark.serializer.JavaSerializer 
+DEBUG [2015-11-10 19:33:58,925] org.spark-project.jetty.util.log.Log:162 - Logging to Logger[org.spark-project.jetty.util.log] via org.spark-project.jetty.util.log.Slf4jLog 
+DEBUG [2015-11-10 19:33:58,967] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@6ead93a4 + SocketConnector@0.0.0.0:0 as connector 
+DEBUG [2015-11-10 19:33:58,976] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@6ead93a4 + qtp1575230923{8<=0<=0/254,-1} as threadpool 
+DEBUG [2015-11-10 19:33:59,042] org.apache.spark.Logging$class:63 - HttpServer is not using security 
+DEBUG [2015-11-10 19:33:59,042] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.handler.HandlerList@1a601065 + org.spark-project.jetty.server.handler.ResourceHandler@18d4646a as handler 
+DEBUG [2015-11-10 19:33:59,043] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.handler.HandlerList@1a601065 + org.spark-project.jetty.server.handler.DefaultHandler@200c77e2 as handler 
+DEBUG [2015-11-10 19:33:59,044] org.spark-project.jetty.util.component.Container:206 - Container org.spark-project.jetty.server.Server@6ead93a4 + org.spark-project.jetty.server.handler.HandlerList@1a601065 as handler 
+DEBUG [2015-11-10 19:33:59,044] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.Server@6ead93a4 
+DEBUG [2015-11-10 19:33:59,062] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.HandlerList@1a601065 
+DEBUG [2015-11-10 19:33:59,063] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.ResourceHandler@18d4646a 
+DEBUG [2015-11-10 19:33:59,070] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.ResourceHandler@18d4646a 
+DEBUG [2015-11-10 19:33:59,070] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.ResourceHandler@18d4646a 
+DEBUG [2015-11-10 19:33:59,071] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting org.spark-project.jetty.server.handler.DefaultHandler@200c77e2 
+DEBUG [2015-11-10 19:33:59,071] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.DefaultHandler@200c77e2 
+DEBUG [2015-11-10 19:33:59,072] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.DefaultHandler@200c77e2 
+DEBUG [2015-11-10 19:33:59,072] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.handler.HandlerList@1a601065 
+DEBUG [2015-11-10 19:33:59,072] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.handler.HandlerList@1a601065 
+DEBUG [2015-11-10 19:33:59,073] org.spark-project.jetty.server.handler.AbstractHandler:57 - starting org.spark-project.jetty.server.Server@6ead93a4 
+DEBUG [2015-11-10 19:33:59,073] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting qtp1575230923{8<=0<=0/254,-1} 
+DEBUG [2015-11-10 19:33:59,077] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED qtp1575230923{8<=7<=8/254,0} 
+DEBUG [2015-11-10 19:33:59,078] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting SocketConnector@0.0.0.0:0 
+DEBUG [2015-11-10 19:33:59,081] org.spark-project.jetty.util.component.AbstractLifeCycle:179 - starting null/null 
+DEBUG [2015-11-10 19:33:59,085] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-] 
+DEBUG [2015-11-10 19:33:59,090] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED SocketConnector@0.0.0.0:63179 
+DEBUG [2015-11-10 19:33:59,090] org.spark-project.jetty.util.component.AbstractLifeCycle:172 - STARTED org.spark-project.jetty.server.Server@6ead93a4 
+DEBUG [2015-11-10 19:33:59,095] org.apache.spark.Logging$class:63 - HTTP file server started at: http://101.5.130.8:63179 
+DEBUG [2015-11-10 19:33:59,304] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.Server@6ead93a4 
+DEBUG [2015-11-10 19:33:59,305] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping SocketConnector@0.0.0.0:63179 
+DEBUG [2015-11-10 19:33:59,307] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-] 
+DEBUG [2015-11-10 19:33:59,307] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED null/null 
+DEBUG [2015-11-10 19:33:59,308] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED SocketConnector@0.0.0.0:0 
+DEBUG [2015-11-10 19:33:59,309] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.HandlerList@1a601065 
+DEBUG [2015-11-10 19:33:59,309] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.HandlerList@1a601065 
+DEBUG [2015-11-10 19:33:59,309] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.DefaultHandler@200c77e2 
+DEBUG [2015-11-10 19:33:59,310] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.DefaultHandler@200c77e2 
+DEBUG [2015-11-10 19:33:59,310] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.DefaultHandler@200c77e2 
+DEBUG [2015-11-10 19:33:59,311] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping org.spark-project.jetty.server.handler.ResourceHandler@18d4646a 
+DEBUG [2015-11-10 19:33:59,311] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.handler.ResourceHandler@18d4646a 
+DEBUG [2015-11-10 19:33:59,311] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.ResourceHandler@18d4646a 
+DEBUG [2015-11-10 19:33:59,312] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.handler.HandlerList@1a601065 
+DEBUG [2015-11-10 19:33:59,312] org.spark-project.jetty.server.handler.AbstractHandler:68 - stopping org.spark-project.jetty.server.Server@6ead93a4 
+DEBUG [2015-11-10 19:33:59,313] org.spark-project.jetty.util.component.AbstractLifeCycle:187 - stopping qtp1575230923{8<=8<=8/254,0} 
+DEBUG [2015-11-10 19:33:59,367] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED qtp1575230923{8<=0<=0/254,3} 
+DEBUG [2015-11-10 19:33:59,367] org.spark-project.jetty.util.component.AbstractLifeCycle:196 - STOPPED org.spark-project.jetty.server.Server@6ead93a4 
+DEBUG [2015-11-10 19:33:59,377] org.apache.spark.util.ActorLogReceive$$anon$1:56 - [actor] received message AkkaMessage(StopMapOutputTracker,true) from Actor[akka://sparkDriver/temp/$a] 
+DEBUG [2015-11-10 19:33:59,379] org.apache.spark.Logging$class:63 - Received RPC message: AkkaMessage(StopMapOutputTracker,true) 
+DEBUG [2015-11-10 19:33:59,391] org.apache.spark.util.ActorLogReceive$$anon$1:62 - [actor] handled message (12.339 ms) AkkaMessage(StopMapOutputTracker,true) from Actor[akka://sparkDriver/temp/$a] 

@@ -1,0 +1,3 @@
+WARN  [2015-11-10 19:21:56,712] org.apache.hadoop.util.NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable 
+WARN  [2015-11-10 19:24:49,090] org.apache.hadoop.util.NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable 
+WARN  [2015-11-10 19:33:56,901] org.apache.hadoop.util.NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable 
