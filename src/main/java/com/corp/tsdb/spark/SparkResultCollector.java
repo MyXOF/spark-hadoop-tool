@@ -143,5 +143,16 @@ public class SparkResultCollector {
 		return jsonArray;
 
 	}
+	
+	public static void main(String[] args) {
+//		SparkResultCollector collector = SparkResultCollector.getInstance();
+//		System.out.println(collector.getPurchaseResultByDay());
+//		System.out.println(collector.getPurchaseResultBySeason());
+//		System.out.println(collector.getPurchaseResultByYear());
+//		System.out.println(collector.getProgramWatchedResultChannelChange());
+//		System.out.println(collector.getProgramWatchedResultTime());
+//		System.out.println(collector.getChannelTuneResultChannelWatched());
+//		System.out.println(collector.getChannelTuneResultDeviceOnline());
+	}
 
 }

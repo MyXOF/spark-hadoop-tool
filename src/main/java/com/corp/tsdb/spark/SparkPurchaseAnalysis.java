@@ -177,7 +177,7 @@ public class SparkPurchaseAnalysis implements Serializable {
 		SparkPurchaseAnalysis analysis = new SparkPurchaseAnalysis(
 				"Spark Test",
 				"spark://demo2:7077",
-				"/Users/xuyi/Documents/Eclipse_WorkSpace/spark-hadoop-tool/target/spark-hadoop-tool-0.0.1-SNAPSHOT.jar",
+				"/Users/xuyi/Documents/Eclipse_WorkSpace/spark-hadoop-tool/target/spark-hadoop-tool.jar",
 				"hdfs://demo2:9000/user/ubuntu/PurchaseSmall.csv");
 		// SparkPurchaseAnalysis analysis = SparkPurchaseAnalysis.getInstance();
 		System.out.println(analysis.AnalyzeRangeByDay());
