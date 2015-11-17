@@ -45,9 +45,9 @@ public class SparkConfig{
 
 			Purchase_Path = props.getProperty("purchase_path");
 			EventClientChannelTune_Path = props
-					.getProperty("eventClientProgramWatched_path");
-			EventClientProgramWatched_Path = props
 					.getProperty("eventClientChannelTune_path");
+			EventClientProgramWatched_Path = props
+					.getProperty("eventClientProgramWatched_path");
 		} catch (IOException e) {
 			logger.error("AbstractSpark : failed to load configuration in {}",
 					CONF_FILE_PATH, e);
