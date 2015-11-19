@@ -54,5 +54,9 @@ public class SparkConfig{
 		}
 	}
 	
-
+	public static void main(String[] args) {
+		SparkConfig config = SparkConfig.getInstance();
+		
+		System.out.print(config.APP_NAME);
+	}
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 public class ChannelName {
 	private static final ChannelName CHANNEL_NAME = new ChannelName();
 	private Map<String, String> channleMap = new HashMap<String, String>();
-	private final String CHANNLE_NAME_PATH = "/Users/xuyi/Documents/Eclipse_WorkSpace/spark-hadoop-tool/src/main/resources/channel";
+	private final String CHANNLE_NAME_PATH = "channel";
 	private BufferedReader bufferedReader;
 		
 	private ChannelName(){
@@ -37,6 +37,7 @@ public class ChannelName {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(channleMap);
 	}
 	
 	public String getValue(String key){
@@ -44,7 +45,7 @@ public class ChannelName {
 		return channleMap.get(key);
 	}
 	
-//	public static void main(String[] args) {
-//		ChannelName service = ChannelName.getInstance();
-//	}
+	public static void main(String[] args) {
+		ChannelName service = ChannelName.getInstance();
+	}
 }
