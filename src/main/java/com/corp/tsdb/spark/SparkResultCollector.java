@@ -4,7 +4,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -257,21 +256,14 @@ public class SparkResultCollector {
 
 	public static void main(String[] args) {
 		 SparkResultCollector collector = SparkResultCollector.getInstance();
-//		 System.out.println(collector.getPurchaseResultByDay());
-//		 System.out.println(collector.getPurchaseResultBySeason());
-//		 System.out.println(collector.getPurchaseResultByYear());
-//		 System.out.println(collector.getProgramWatchedResultChannelChange());
-//		 System.out.println(collector.getProgramWatchedResultTime());
-//		 System.out.println(collector.getChannelTuneResultChannelWatched());
-//		 System.out.println(collector.getChannelTuneResultDeviceOnline());
 
-//		 SparkResultCollector.dumpToFile(collector.getPurchaseResultByYear(), "PurchaseResultByYear");
-//		 SparkResultCollector.dumpToFile(collector.getPurchaseResultBySeason(), "PurchaseResultBySeason");
-//		 SparkResultCollector.dumpToFile(collector.getPurchaseResultByDay(), "PurchaseResultByDay");
-//		 SparkResultCollector.dumpToFile(collector.getProgramWatchedResultChannelChange(), "ProgramWatchedResultChannelChange");
+		 SparkResultCollector.dumpToFile(collector.getPurchaseResultByYear(), "PurchaseResultByYear");
+		 SparkResultCollector.dumpToFile(collector.getPurchaseResultBySeason(), "PurchaseResultBySeason");
+		 SparkResultCollector.dumpToFile(collector.getPurchaseResultByDay(), "PurchaseResultByDay");
+		 SparkResultCollector.dumpToFile(collector.getProgramWatchedResultChannelChange(), "ProgramWatchedResultChannelChange");
 		 SparkResultCollector.dumpToFile(collector.getProgramWatchedResultTime(), "ProgramWatchedResultTime");
-//		 SparkResultCollector.dumpToFile(collector.getChannelTuneResultChannelWatched(), "ChannelTuneResultChannelWatched");
-//		 SparkResultCollector.dumpToFile(collector.getChannelTuneResultDeviceOnline(), "ChannelTuneResultDeviceOnline");
+		 SparkResultCollector.dumpToFile(collector.getChannelTuneResultChannelWatched(), "ChannelTuneResultChannelWatched");
+		 SparkResultCollector.dumpToFile(collector.getChannelTuneResultDeviceOnline(), "ChannelTuneResultDeviceOnline");
 		 
 	}
 
